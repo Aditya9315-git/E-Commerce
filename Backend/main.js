@@ -1,6 +1,8 @@
 const express= require('express')
 const env=require('dotenv')
+const cors=require('cors')
 const app= express()
+
 
 // dotenv configue
 env.config()
@@ -15,7 +17,7 @@ let ProductRoutes=require('./Routes/ProductRoutes')
 
 // middleware
 app.use(express.json())
-
+app.use(cors())
 
 app.use('/api',ProductRoutes)
 
